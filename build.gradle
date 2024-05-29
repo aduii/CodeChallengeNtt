@@ -1,0 +1,30 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.7'
+	id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'com.alexjuep'
+version = '1'
+
+java {
+	sourceCompatibility = '11'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

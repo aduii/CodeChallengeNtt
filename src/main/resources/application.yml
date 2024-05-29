@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: microservicio
+
+  redis:
+    host: localhost
+    port: 6379
+    password:
